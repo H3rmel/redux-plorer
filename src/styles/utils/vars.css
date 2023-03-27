@@ -1,0 +1,11 @@
+:root {
+  --primary: #85d7fc;
+  --accent: #60baf9;
+  --dark: #15233d;
+  --light: #f9f9f9;
+  /* Defaults */
+  --bg: var(--dark);
+  --color: var(--light);
+  /* Widths */
+  --container: min(100% - 2rem, 75rem);
+}
