@@ -1,17 +1,21 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
-import { Home, Trips, Error, NotFound } from "@pages/Index";
+import { Home, Books, Error, NotFound } from "@pages/Index";
 
-export const router = createBrowserRouter(
-  createRoutesFromElements(
-    <>
-      <Route path="/" element={<Home />} errorElement={<Error />} />
-      <Route path="/trips" element={<Trips />} errorElement={<Error />} />
-      <Route path="*" element={<NotFound />} />
-    </>
-  )
-);
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <Error />,
+  },
+  {
+    path: "/books",
+    element: <Books />,
+    errorElement: <Error />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+    errorElement: <Error />,
+  },
+]);
