@@ -8,6 +8,7 @@
   /* Contextual */
   --success: #00C6AB;
   --danger: #E2779C;
+  --danger-light: #e892b0;
   /* Defaults */
   --bg: var(--dark);
   --color: var(--light);

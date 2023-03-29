@@ -1,3 +1,8 @@
+.books-heading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .home-list {
   display: flex;
   flex-direction: column;
@@ -7,9 +12,10 @@
   list-style-type: none;
 }
 
-.trip-card {
+.book-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 0.75rem;
   width: 100%;
   padding: 1rem;
@@ -18,33 +24,14 @@
   color: var(--dark);
 }
 
-.trip-card img {
+.book-card img {
   max-width: 100%;
   max-height: 100%;
   aspect-ratio: 16/9;
   border-radius: var(--rounded-md);
 }
 
-.trip-card div span {
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--rounded-md);
-  color: var(--light);
-}
-
-.trip-card div span.available {
-  background: var(--success);
-}
-
-.trip-card div span.unavailable {
-  background: var(--danger);
-}
-
-.trip-card div p {
-  color: var(--dark-light);
-  display: none;
-}
-
-.trip-card button {
+.book-card button, .submit-btn {
   display: inline-flex;
   gap: 0.25rem;
   align-items: center;
@@ -52,32 +39,33 @@
   padding: 0.5rem 0.75rem;
   border: 0;
   border-radius: var(--rounded-md);
-  background: var(--accent);
+  background: var(--danger);
   color: var(--light);
   transition: 300ms;
   cursor: pointer;
 }
 
-.trip-card button:hover {
+.book-card button:hover {
+  background: var(--danger-light);
+}
+
+.submit-btn {
+  margin-block: 1rem;
+  margin-inline: auto;
+  background: var(--accent);
+}
+
+.submit-btn:hover {
   background: var(--primary);
 }
 
 @media (min-width: 768px) {
-  .trip-card {
+  .book-card {
     flex-direction: row;
     align-items: center;
   }
 
-  .trip-card img {
+  .book-card img {
     max-width: 256px;
-  }
-
-  .trip-card div p {
-    display: block;
-    text-align: justify;
-  }
-
-  .trip-card button {
-    align-self: end;
   }
 }

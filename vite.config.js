@@ -12,6 +12,7 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "./src/components"),
       "@layouts": path.resolve(__dirname, "./src/layouts"),
       "@api": path.resolve(__dirname, "./src/api"),
+      "@bookActions": path.resolve(__dirname, "./src/store/modules/book/actions.js")
     },
   },
 });
