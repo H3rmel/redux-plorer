@@ -31,12 +31,32 @@
   border-radius: var(--rounded-md);
 }
 
-.book-card button, .submit-btn {
+.book-card .book-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.book-card .book-quantity span {
+  position: relative;
+  font-weight: 500;
+}
+
+.book-card .book-quantity button {
+  background: var(--primary);
+}
+
+.book-card .book-quantity button:hover {
+  background: var(--accent);
+}
+
+.book-card button,
+.submit-btn {
   display: inline-flex;
   gap: 0.25rem;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem;
   border: 0;
   border-radius: var(--rounded-md);
   background: var(--danger);

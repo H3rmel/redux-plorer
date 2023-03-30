@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { MainLayout } from "@layouts/Index";
 
-import { Trash } from "phosphor-react";
+import { Plus, Trash, Minus } from "phosphor-react";
 
-import { removeBookTrip } from "@bookActions";
+import { removeBookTrip, updateAmount } from "@bookActions";
 
 export const Books = () => {
   const dispatch = useDispatch();
@@ -12,6 +12,14 @@ export const Books = () => {
 
   const handleRemove = (id) => {
     dispatch(removeBookTrip(id));
+  };
+
+  const decrementAmount = (trip) => {
+    dispatch(updateAmount(trip.id, trip.amount - 1));
+  };
+
+  const incrementAmount = (trip) => {
+    dispatch(updateAmount(trip.id, trip.amount + 1));
   };
 
   return (
@@ -28,7 +36,15 @@ export const Books = () => {
               loading="lazy"
             />
             <h3>{bookTrip.title}</h3>
-            <span>Quantidade: {bookTrip.amount}</span>
+            <div className="book-quantity">
+              <button onClick={() => decrementAmount(bookTrip)}>
+                <Minus size={20} />
+              </button>
+              <span>{bookTrip.amount}</span>
+              <button onClick={() => incrementAmount(bookTrip)}>
+                <Plus size={20} />
+              </button>
+            </div>
             <button onClick={() => handleRemove(bookTrip.id)}>
               <Trash size={20} weight="bold" />
             </button>

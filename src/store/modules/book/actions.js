@@ -11,3 +11,11 @@ export const removeBookTrip = (id) => {
     id,
   };
 };
+
+export const updateAmount = (id, amount) => {
+  return {
+    type: "UPDATE_BOOKTRIP",
+    id,
+    amount,
+  };
+};

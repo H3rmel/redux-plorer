@@ -20,5 +20,12 @@ export function bookTrip(state = [], action) {
       if (tripIndex >= 0) draft.splice(tripIndex, 1);
     });
 
+  if (action.type === "UPDATE_BOOKTRIP" && action.amount > 0)
+    return produce(state, (draft) => {
+      const tripIndex = draft.findIndex((trip) => trip.id === action.id);
+
+      if (tripIndex >= 0) draft[tripIndex].amount = Number(action.amount);
+    });
+
   return state;
 }
